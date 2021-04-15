@@ -16,6 +16,7 @@ try:
 except Exception:
     pass
 
+__version__ = 0.4
 
 class Deta:
     def __init__(self, project_key: str = None, *, project_id: str = None, host: str = None):
