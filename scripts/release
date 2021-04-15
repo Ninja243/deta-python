@@ -24,4 +24,5 @@ fi
 
 #set -x
 
+${PREFIX}gh auth login --with-token $GITHUB_TOKEN
 ${PREFIX}gh release create "v${VERSION}" -f CHANGELOG.md
