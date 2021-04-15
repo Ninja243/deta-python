@@ -28,7 +28,7 @@ jobs:
     - name: Create release
       run: "scripts/release"
       env:
-          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     # Publish with twine
     - name: Publish with twine
       run: "scripts/test_publish"
