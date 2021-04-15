@@ -1,4 +1,4 @@
-name: Lint and tag before release
+name: Tag and release
 
 on: 
   workflow_dispatch:
@@ -7,7 +7,7 @@ on:
     - release
 
 jobs:
-  lint-and-tag:
+  tag_and_release:
    runs-on: ubuntu-18.04
    steps:
     # Get the code into our container
@@ -21,6 +21,19 @@ jobs:
     # Install dependencies
     - name: Install dependencies
       run: "scripts/install"
+    # Build package
+    - name: Build package
+      run: "scripts/build"
     # Make tag
     - name: Make git tag
       run: "scripts/tag"
+     # Create Github release
+    - name: Create release
+      run: "scripts/release"
+    # Publish with twine
+    - name: Publish with twine
+      run: "scripts/publish"
+      env:
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
+   
