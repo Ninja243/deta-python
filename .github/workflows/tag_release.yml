@@ -1,6 +1,7 @@
 name: Lint and tag before release
 
 on: 
+  workflow_dispatch:
   push:
    branches:
     - release
