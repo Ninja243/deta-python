@@ -14,5 +14,5 @@ if [ ! -z "$GITHUB_ACTIONS" ]; then
   fi
 fi
 
-${PREFIX}git tag "v${VERSION}"
-${PREFIX}git push origin "v${VERSION}"
+git tag "v${VERSION}"
+git push origin "v${VERSION}"
