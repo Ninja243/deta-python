@@ -25,6 +25,6 @@ fi
 #set -x
 
 ${PREFIX}echo "Pre-auth"
-${PREFIX}echo $GITHUB_TOKEN | gh auth login -h github.com --with-token
+${PREFIX}gh auth login -h github.com --with-token
 ${PREFIX}echo "Got past auth!"
 ${PREFIX}gh release create "v${VERSION}" -f CHANGELOG.md
