@@ -24,7 +24,4 @@ fi
 
 #set -x
 
-${PREFIX}echo "Pre-auth"
-${PREFIX}gh auth login
-${PREFIX}echo "Got past auth!"
 ${PREFIX}gh release create "v${VERSION}" -f CHANGELOG.md
